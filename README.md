@@ -29,5 +29,16 @@
 - Production-style feature engineering
 - Professional Practices Demonstrated
 
+---
 
-⭐ If you find this project interesting or useful, feel free to star it. Your feedback is appreciated!
+### 📜 Certification
+
+This project was developed as the final capstone of the AI Associate for Data Science career track on DataCamp.
+Upon successful completion, I was awarded the official:
+
+> 🏅 AI Associate for Data Science Certification
+> Issued by DataCamp, 2025
+
+It demonstrates hands-on ability to apply AI techniques, build production-grade machine learning pipelines, and work with real-world customer behavior data.
+
+---
