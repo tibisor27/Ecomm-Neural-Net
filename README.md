@@ -7,6 +7,8 @@
   <img src="https://img.shields.io/badge/Python-3.9%2B-success" alt="Python">
 </div>
 
+---
+
 ### 🎯 **Core Technical Competencies**
 ✅ **End-to-End Neural Network Implementation**  
 - Built with **PyTorch** from scratch (no high-level wrappers)  
@@ -37,6 +39,7 @@ This project was developed as the final capstone of the AI Associate for Data Sc
 Upon successful completion, I was awarded the official:
 
 > 🏅 AI Associate for Data Science Certification
+
 > Issued by DataCamp, 2025
 
 It demonstrates hands-on ability to apply AI techniques, build production-grade machine learning pipelines, and work with real-world customer behavior data.
