@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/PyTorch-2.0-red" alt="PyTorch">
   <img src="https://img.shields.io/badge/Sklearn-1.2-blue" alt="Scikit-learn">
   <img src="https://img.shields.io/badge/Python-3.9%2B-success" alt="Python">
-  <img src="https://img.shields.io/badge/DataCamp-Certified-brightgreen" alt="Certified">
+  <img src="https://www.datacamp.com/statement-of-accomplishment/track/1141fd982606f1bb379f1c409f7647799b03ebaf?raw=1" alt="Certified">
 </div>
 
 ### 🎯 **Core Technical Competencies**
