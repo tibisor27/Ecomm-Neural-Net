@@ -1,0 +1,6 @@
+time_spent,pages_viewed,basket_value,device_type,customer_type
+0.4,5,120.5,Mobile,New
+0.6,8,200.0,Desktop,Returning
+0.3,4,0,Tablet,New
+0.7,7,50.0,Mobile,Returning
+0.5,6,150.0,Desktop,New
