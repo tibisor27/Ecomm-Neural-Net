@@ -24,6 +24,8 @@
 - Type consistency enforcement
 - Clean separation of preprocessing/modeling code
 
+---
+
 ### 🎯 What Sets This Apart from Academic Projects
 - Real-World Data Challenges Solved
 - Mixed data types (numeric, categorical, temporal)
