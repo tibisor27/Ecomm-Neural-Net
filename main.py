@@ -1,5 +1,6 @@
 from src.preprocessing import clean_raw_data, prepare_model_features
 from src.train import train_model
+import torch
 
 def main():
     # Task 1 - Clean raw data
@@ -8,14 +9,18 @@ def main():
     print("Task 1 - Data cleaning completed.")
 
     # Task 2 - Prepare features for the model
-    model_features = prepare_model_features("data/model_data.csv")
+    model_features = prepare_model_features("data/clean_customer_data.csv")
     model_features.to_csv("data/prepared_model_features.csv", index=False)
     print("Task 2 - Feature preparation completed.")
 
-    # Task 3 - Train model and make validation predictions
-    purchase_model, validation_preds = train_model("data/input_model_features.csv", "data/validation_features.csv")
-    validation_preds.to_csv("data/validation_predictions.csv", index=False)
-    print("Task 3 - Model trained and predictions saved.")
+    # Task 3 - Train model with internal 80/20 split
+    purchase_model, results = train_model("data/prepared_model_features.csv")
+    results.to_csv("outputs/test_predictions.csv", index=False)
+    
+    # Save the trained model for future predictions
+    torch.save(purchase_model.state_dict(), "models/final/trained_model.pth")
+    print("Task 3 - Model trained and tested successfully!")
+    print("Model saved as 'models/final/trained_model.pth'")
 
 if __name__ == "__main__":
     main()
