@@ -83,21 +83,6 @@
 
 ---
 
-### 🎯 What Sets This Apart from Academic Projects
-- **Real-World Data Challenges Solved**
-  - Mixed data types (numeric, categorical, temporal)
-  - Custom business rules for missing values
-  - Production-style feature engineering
-- **Professional Practices Demonstrated**
-  - Comprehensive model validation
-  - Performance visualization
-  - Business-relevant metrics interpretation
-- **Industry-Level Results**
-  - 95% accuracy exceeds typical e-commerce benchmarks
-  - Zero false positives (100% precision)
-  - Strong recall maintaining customer capture
-
----
 
 ## 🚀 **Quick Start**
 
@@ -112,8 +97,6 @@ pip install -r requirements.txt
 # Run complete pipeline
 python main.py
 
-# Generate validation graphics
-python create_validation_graphics.py
 ```
 
 ---
@@ -123,16 +106,21 @@ python create_validation_graphics.py
 ```
 DataCamp_Certified_Project/
 ├── src/
-│   ├── preprocessing.py    # Data cleaning & feature engineering
-│   ├── model.py           # PyTorch neural network
-│   └── train.py           # Training loop & validation
+|   ├── __pycache__/
+│   ├── preprocessing.py              # Data cleaning & feature engineering
+│   ├── model.py                      # PyTorch neural network
+│   └── train.py                      # Training loop & validation
 ├── data/
 │   └── raw_customer_data.csv
+|   └── validation_predictions.csv
 ├── outputs/
-│   └── validation_img/     # Performance visualizations
+│   ├── validation_img/               # Performance visualizations
+|   ├── test_predictions.csv
 ├── models/final/
-│   └── trained_model.pth   # Saved PyTorch model
-└── main.py                # Complete pipeline
+│   └── trained_model.pth             # Saved PyTorch model
+├── tests/
+│   └── test_train.py
+└── main.py                           # Complete pipeline
 ```
 
 ---
