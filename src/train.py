@@ -44,7 +44,7 @@ def train_model(data_file, experiment_name=None, tracker=None):
     print(f"Training on {len(X_train)} samples (80%), testing on {len(X_test)} samples (20%)")
     
     # Training loop
-    epochs = 90
+    epochs = 100
     for epoch in range(epochs):
         model.train()
         train_loss = 0
