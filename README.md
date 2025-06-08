@@ -120,6 +120,8 @@ DataCamp_Certified_Project/
 │   └── trained_model.pth             # Saved PyTorch model
 ├── tests/
 │   └── test_train.py
+├── logs/
+│   └── experiements_log.csv
 └── main.py                           # Complete pipeline
 ```
 
