@@ -7,8 +7,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from .model import PurchaseModel
 
-def train_model(data_file):
+def train_model(data_file, experiment_name=None, tracker=None):
     """Trains model on single dataset with internal 80/20 train/test split"""
+    
+    # If we have a tracker, save the results
+    if tracker and experiment_name:
+        tracker.start_experiment(experiment_name)
+    
     # Load the complete dataset
     data = pd.read_csv(data_file)
     features = data.drop(columns=['customer_id', 'purchase'])
@@ -39,7 +44,8 @@ def train_model(data_file):
     print(f"Training on {len(X_train)} samples (80%), testing on {len(X_test)} samples (20%)")
     
     # Training loop
-    for epoch in range(100):
+    epochs = 90
+    for epoch in range(epochs):
         model.train()
         train_loss = 0
         for features, labels in train_loader:
@@ -53,7 +59,7 @@ def train_model(data_file):
         # Print progress every 20 epochs
         if (epoch + 1) % 20 == 0:
             avg_loss = train_loss / len(train_loader)
-            print(f"Epoch {epoch+1}/100 - Average Loss: {avg_loss:.4f}")
+            print(f"Epoch {epoch+1}/{epochs} - Average Loss: {avg_loss:.4f}")
     
     # Final test evaluation
     model.eval()
@@ -72,6 +78,17 @@ def train_model(data_file):
     print(f"Test Precision: {test_precision:.4f}")
     print(f"Test Recall: {test_recall:.4f}")
     print(f"Test F1-Score: {test_f1:.4f}")
+    
+    # If we have a tracker, save the results
+    if tracker and experiment_name:
+        tracker.log_results(
+            accuracy=test_accuracy,
+            precision=test_precision, 
+            recall=test_recall,
+            f1_score=test_f1,
+            epochs=epochs,
+            notes="modified training setup"
+        )
     
     # Prepare test results
     test_results = pd.DataFrame({
