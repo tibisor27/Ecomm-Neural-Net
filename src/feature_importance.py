@@ -18,7 +18,7 @@ def simple_shap_analysis(model, data_path: str):
         background_data = torch.tensor(X[:50], dtype=torch.float32)
         explainer = shap.DeepExplainer(model, background_data)
         
-        # Calculate SHAP values
+        # Calculate SHAP values 
         sample_data = torch.tensor(X[:100], dtype=torch.float32)
         shap_values = explainer.shap_values(sample_data)
         
