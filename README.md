@@ -76,10 +76,9 @@
 </div>
 
 **Key Business Insights:**
-- `basket_value` most predictive feature (revenue correlation)
-- `time_spent` second most important (engagement indicator)
-- `pages_viewed` significant predictor (browsing behavior)
-- Device & customer type provide additional discrimination
+- `customer_type_New` most predictive feature 
+- `customer_type_Premium` second most important (engagement indicator)
+- `time_spent` significant predictor (browsing behavior)
 
 ---
 
