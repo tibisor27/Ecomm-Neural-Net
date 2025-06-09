@@ -4,3 +4,8 @@ timestamp,experiment_name,test_accuracy,test_precision,test_recall,test_f1,epoch
 2025-06-08 17:07:15,baseline_experiment_20250608_1707,0.95,1.0000,0.9167,0.9565,90,modified training setup
 2025-06-08 17:08:20,baseline_experiment_2025-06-08_17-08,0.95,1.0000,0.9167,0.9565,90,modified training setup
 2025-06-08 21:23:39,baseline_experiment_2025-06-08_21-23,0.95,1.0000,0.9167,0.9565,100,modified training setup
+2025-06-09 19:00:02,baseline_experiment_2025-06-09_19-00,0.95,1.0000,0.9167,0.9565,100,modified training setup
+2025-06-09 19:00:38,baseline_experiment_2025-06-09_19-00,0.95,1.0000,0.9167,0.9565,100,modified training setup
+2025-06-09 19:23:01,baseline_experiment_2025-06-09_19-23,0.95,1.0000,0.9167,0.9565,100,modified training setup
+2025-06-09 19:24:12,baseline_experiment_2025-06-09_19-24,0.95,1.0000,0.9167,0.9565,100,modified training setup
+2025-06-09 19:45:28,baseline_experiment_2025-06-09_19-45,0.95,1.0000,0.9167,0.9565,100,modified training setup
