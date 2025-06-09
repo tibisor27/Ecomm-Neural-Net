@@ -31,8 +31,22 @@ def main():
     print("Task 3 - Model trained and tested successfully!")
     print("Model saved as 'models/final/trained_model.pth'")
     
+    # Task 4 - SHAP Feature Importance Analysis
+    print("Task 4 - SHAP Feature Importance Analysis...")
+    from src.simple_shap import simple_shap_analysis
+    
+    importance_results = simple_shap_analysis(
+        model=purchase_model,
+        data_path="data/prepared_model_features.csv"
+    )
+    
+    if importance_results is not None:
+        print("Task 4 completed - SHAP analysis done!")
+    else:
+        print("Task 4 skipped - SHAP analysis not available")
+    
     # View all experiments
-    print("\n" + "="*50)
+    print("="*50)
     tracker.view_all_experiments()
 
 if __name__ == "__main__":
