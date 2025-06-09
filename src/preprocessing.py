@@ -1,39 +1,5 @@
 import pandas as pd
-import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-import mlflow
-import mlflow.sklearn
-import json
-from datetime import datetime
-import hashlib
-
-def log_data_profile(df: pd.DataFrame, stage: str):
-    """Log comprehensive data profiling metrics to MLflow"""
-    
-    # Basic data info
-    mlflow.log_param(f"{stage}_n_samples", len(df))
-    mlflow.log_param(f"{stage}_n_features", len(df.columns))
-    mlflow.log_param(f"{stage}_columns", list(df.columns))
-    
-    # Data quality metrics
-    missing_counts = df.isnull().sum().to_dict()
-    mlflow.log_metrics({f"{stage}_missing_{col}": count for col, count in missing_counts.items()})
-    
-    # Statistical summaries for numerical columns
-    numerical_cols = df.select_dtypes(include=[np.number]).columns
-    for col in numerical_cols:
-        if col in df.columns:
-            mlflow.log_metric(f"{stage}_{col}_mean", df[col].mean())
-            mlflow.log_metric(f"{stage}_{col}_std", df[col].std())
-            mlflow.log_metric(f"{stage}_{col}_min", df[col].min())
-            mlflow.log_metric(f"{stage}_{col}_max", df[col].max())
-    
-    # Data fingerprint for versioning
-    data_hash = hashlib.md5(pd.util.hash_pandas_object(df, index=True).values).hexdigest()
-    mlflow.log_param(f"{stage}_data_hash", data_hash)
-    
-    print(f"✅ Logged {stage} data profile: {len(df)} samples, {len(df.columns)} features")
-    return data_hash
 
 def clean_raw_data(file_path: str) -> pd.DataFrame:
     """Reads and cleans raw data, returning a cleaned DataFrame."""
@@ -64,7 +30,7 @@ def prepare_model_features(file_path: str) -> pd.DataFrame:
     model_data[numerical_features] = scaler.fit_transform(model_data[numerical_features])
 
     categorical_features = ['device_type', 'customer_type']
-    # Fix: Add dtype=int to get_dummies to ensure numeric output
+
     encoded = pd.get_dummies(model_data[categorical_features], prefix=categorical_features, dtype=int)
 
     model_feature_set = pd.concat([model_data.drop(columns=categorical_features), encoded], axis=1)
